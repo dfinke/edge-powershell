@@ -15,7 +15,10 @@ From the owin-powershell directory, run:
 ```
 npm install
 ```
-Build the VS solution src\Owin.PowerShell\Owin.PowerShell.sln
+Build the VS solution 
+```
+src\Owin.PowerShell\Owin.PowerShell.sln
+```
 From the directory owin-powershell\samples\tryPowerShell, set this variable in PowerShell
 
 ```
@@ -28,4 +31,26 @@ Then from owin-powershell\samples\tryPowerShell
 node .\test.js
 
 [ 'Hello World' ]
+```
+
+Other examples
+The results return are json
+===
+```
+node .\test.js 1..10
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+```
+
+```
+node .\test.js 1..10 | ConvertFrom-Json
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
 ```
