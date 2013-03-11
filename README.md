@@ -12,7 +12,8 @@ Is an experiment to execute PowerShell scripts from a node.js app.
 How
 ===
 Install node.js
-From the owin-powershell directory, run:
+
+Then, from the owin-powershell directory, run:
 ```
 npm install
 ```
