@@ -11,7 +11,7 @@ Is an experiment to execute PowerShell scripts from a node.js app.
 
 How
 ===
-Install node.js
+Install [node.js](http://nodejs.org/)
 
 Then, from the owin-powershell directory, run:
 ```
