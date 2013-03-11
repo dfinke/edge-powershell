@@ -7,6 +7,7 @@ owin-powerShell
 ===============
 Is an experiment to execute PowerShell scripts from a node.js app.
 
+[Follow @dfinke](https://twitter.com/dfinke)
 
 How
 ===
