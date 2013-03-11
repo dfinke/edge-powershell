@@ -34,8 +34,8 @@ node .\test.js
 ```
 
 Other examples
-The results return are json
 ===
+The results returned are json
 ```
 node .\test.js 1..10
 [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
@@ -53,4 +53,21 @@ node .\test.js 1..10 | ConvertFrom-Json
 8
 9
 10
+```
+
+Know issues
+===
+I'm still working on marshaling the data from PowerShell back to nodejs. PowerShell and the JavaScript serialization are not playing well.
+So, the following will not produce the correct results.
+```
+node .\test.js Get-Process
+```
+
+```
+node .\test.js 'Get-Process'
+```
+
+# Displays the correct string output
+```
+node .\test.js 'Get-Process| Out-String' | ConvertFrom-Json
 ```
