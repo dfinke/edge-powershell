@@ -1,9 +1,9 @@
-Run Powershell in node.js
+Run PowerShell in node.js
 ===============
 
 [Owin](https://github.com/tjanczuk/owin) allows you to run .NET and node.js code in one process. You can call .NET functions from node.js and node.js functions from .NET. Owin takes care of marshaling data between CLR and V8. Owin also reconciles threading models of single threaded V8 and multi-threaded CLR.
 
-owin-powerShell
+owin-powershell
 ===============
 Is an experiment to execute PowerShell scripts from a node.js app.
 
@@ -86,7 +86,7 @@ node .\testMultiply.js
 10
 ```
 
-Know issues
+Known issues
 ===
 I'm still working on marshaling the data from PowerShell back to nodejs. PowerShell and the JavaScript serialization are not playing well.
 So, the following will not produce the correct results.
