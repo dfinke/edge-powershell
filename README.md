@@ -57,7 +57,7 @@ node .\test.js 1..10 | ConvertFrom-Json
 
 Use JavaScript and act on the results from PowerShell
 ===
-Here you pass in the range *_1..5_* to PowerShell, it returns a json array. You can then use *_forEach_* on it and print it.
+Here you pass in the range **_1..5_** to PowerShell, it returns a json array. You can then use **_forEach_** on it and print it.
 
 ```
 var owin = require('../../lib/owin-powershell.js')
