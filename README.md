@@ -98,7 +98,7 @@ node .\test.js 'Get-Process'
 ```
 
 ## Displays the correct string output
-But requires the Out-String. Plus, it would be prefered to get the powershell objects back to the pipeline.
+But requires the **_Out-String_**. Plus, it would be prefered to get the powershell objects back to the pipeline.
 
 ```
 node .\test.js 'Get-Process | where handles -gt 700 | Out-string' | ConvertFrom-Json
