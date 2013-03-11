@@ -55,6 +55,36 @@ node .\test.js 1..10 | ConvertFrom-Json
 10
 ```
 
+Interact in JavaScript with the results from PowerShell
+===
+Here you pass in the range 1..5 to PowerShell, it returns a json array. You can then use _forEach_ on it and print it.
+
+```
+var owin = require('../../lib/owin-powershell.js')
+
+var script = "1..5";
+
+powerShell(script, function (error, result) {
+    if (error) throw error;
+
+    result.forEach(function(item) {
+        console.log(item*2);
+    });
+});
+```
+
+Run it
+
+```
+node .\testMultiply.js
+
+2
+4
+6
+8
+10
+```
+
 Know issues
 ===
 I'm still working on marshaling the data from PowerShell back to nodejs. PowerShell and the JavaScript serialization are not playing well.
@@ -67,7 +97,9 @@ node .\test.js Get-Process
 node .\test.js 'Get-Process'
 ```
 
-# Displays the correct string output
+## Displays the correct string output
+But requires the Out-String. Plus, it would be prefered to get the powershell objects back to the pipeline.
+
 ```
 node .\test.js 'Get-Process | where handles -gt 700 | Out-string' | ConvertFrom-Json
 
