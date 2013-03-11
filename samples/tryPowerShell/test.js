@@ -14,7 +14,7 @@ var owin = require('../../lib/owin-powershell.js')
 //var script = "'hello world'";
 var script = process.argv.splice(2)[0] || "'Hello World'";
 
-powerShell(script, function (error, result) {
+owin.powerShell(script, function (error, result) {
     if (error) throw error;
     console.log(result);
 });
