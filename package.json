@@ -6,7 +6,7 @@
     "twitter": "dfinke"
   },
   "version": "0.1.0-pre",
-  "description": "Implement node.js express PowerShell using OWIN",
+  "description": "Implement node.js PowerShell using OWIN",
   "tags" : ["owin", "net", "clr", "c#", "managed", ".net", "powershell", "middleware"],
   "main": "./lib/owin-powershell.js",
   "engines": { "node": "0.8.x" },
@@ -14,13 +14,13 @@
   "dependencies": {
     "owin": "0.5.0"
   },
-  "homepage": "https://github.com/tjanczuk/owin-connect",
+  "homepage": "https://github.com/dfinke/owin-powershell",
   "repository": {
     "type": "git",
-    "url": "git@github.com:tjanczuk/owin-connect.git"
+    "url": "git@github.com:dfinke/owin-powershell.git",
   },
   "bugs" : {
-    "url" : "http://github.com/tjanczuk/owin-connect/issues"
+    "url" : "https://github.com/dfinke/owin-powershell/issues"
   },
   "scripts": {
   }
