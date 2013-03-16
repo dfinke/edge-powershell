@@ -5,19 +5,19 @@
     "url": "http://dougfinke.com",
     "twitter": "dfinke"
   },
-  "version": "0.1.0-pre",
-  "description": "Implement node.js PowerShell using OWIN",
-  "tags" : ["owin", "net", "clr", "c#", "managed", ".net", "powershell", "middleware"],
+  "version": "0.1.0",
+  "description": "Implement node.js PowerShell using Edge",
+  "tags" : ["edge", "net", "clr", "c#", "managed", ".net", "powershell", "middleware"],
   "main": "./lib/owin-powershell.js",
   "engines": { "node": "0.8.x" },
   "licenses": [ { "type": "Apache", "url": "http://www.apache.org/licenses/LICENSE-2.0" } ],
   "dependencies": {
-    "owin": "0.5.0"
+    "edge": "0.7.0"
   },
   "homepage": "https://github.com/dfinke/owin-powershell",
   "repository": {
     "type": "git",
-    "url": "git@github.com:dfinke/owin-powershell.git",
+    "url": "git@github.com:dfinke/owin-powershell.git"
   },
   "bugs" : {
     "url" : "https://github.com/dfinke/owin-powershell/issues"
