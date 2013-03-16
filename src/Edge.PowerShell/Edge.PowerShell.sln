@@ -1,7 +1,7 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owin.PowerShell", "Owin.PowerShell\Owin.PowerShell.csproj", "{D5A5DF8F-2B03-4E7F-95EC-96A022A16DE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edge.PowerShell", "Edge.PowerShell\Edge.PowerShell.csproj", "{D5A5DF8F-2B03-4E7F-95EC-96A022A16DE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
