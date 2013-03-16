@@ -1,5 +1,5 @@
 {
-  "name": "owin-powershell",
+  "name": "edge-powershell",
   "author": {
     "name": "Doug Finke <finked@hotmail.com>",
     "url": "http://dougfinke.com",
@@ -14,13 +14,13 @@
   "dependencies": {
     "edge": "0.7.0"
   },
-  "homepage": "https://github.com/dfinke/owin-powershell",
+  "homepage": "https://github.com/dfinke/edge-powershell",
   "repository": {
     "type": "git",
-    "url": "git@github.com:dfinke/owin-powershell.git"
+    "url": "git@github.com:dfinke/edge-powershell.git"
   },
   "bugs" : {
-    "url" : "https://github.com/dfinke/owin-powershell/issues"
+    "url" : "https://github.com/dfinke/edge-powershell/issues"
   },
   "scripts": {
   }
