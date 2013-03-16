@@ -1,9 +1,9 @@
 Run PowerShell in node.js
 ===============
 
-[Owin](https://github.com/tjanczuk/owin) allows you to run .NET and node.js code in one process. You can call .NET functions from node.js and node.js functions from .NET. Owin takes care of marshaling data between CLR and V8. Owin also reconciles threading models of single threaded V8 and multi-threaded CLR.
+[Edge](https://github.com/tjanczuk/edge) allows you to run .NET and node.js code in one process. You can call .NET functions from node.js and node.js functions from .NET. Edge takes care of marshaling data between CLR and V8. Edge also reconciles threading models of single threaded V8 and multi-threaded CLR.
 
-owin-powershell
+edge-powershell
 ===============
 Is an experiment to execute PowerShell scripts from a node.js app.
 
@@ -13,21 +13,21 @@ How
 ===
 Install [node.js](http://nodejs.org/)
 
-Then, from the owin-powershell directory, run:
+Then, from the edge-powershell directory, run:
 ```
 npm install
 ```
 Build the VS solution 
 ```
-src\Owin.PowerShell\Owin.PowerShell.sln
+src\Edge.PowerShell\Edge.PowerShell.sln
 ```
-From the directory owin-powershell\samples\tryPowerShell, set this variable in PowerShell
+From the directory edge-powershell\samples\tryPowerShell, set this variable in PowerShell
 
 ```
-$env:OWIN_POWERSHELL_NATIVE='..\..\src\Owin.PowerShell\Owin.PowerShell\bin\Debug\Owin.PowerShell.dll'
+$env:EDGE_POWERSHELL_NATIVE='..\..\src\Edge.PowerShell\Edge.PowerShell\bin\Debug\Edge.PowerShell.dll'
 ```
 
-Then from owin-powershell\samples\tryPowerShell
+Then from edge-powershell\samples\tryPowerShell
 
 ```
 node .\test.js
@@ -62,11 +62,11 @@ Use JavaScript and act on the results from PowerShell
 Here you pass in the range **_1..5_** to PowerShell, it returns a json array. You can then use **_forEach_** on it and print it.
 
 ```
-var owin = require('../../lib/owin-powershell.js')
+var edge = require('../../lib/g-powershell.js')
 
 var script = "1..5";
 
-powerShell(script, function (error, result) {
+edge.powerShell(script, function (error, result) {
     if (error) throw error;
 
     result.forEach(function(item) {
