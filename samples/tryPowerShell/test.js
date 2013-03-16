@@ -1,4 +1,4 @@
-var owin = require('../../lib/owin-powershell.js')
+var edge = require('../../lib/edge-powershell.js')
 
 //powerShell('. C:\OwinPowerShell\samples\helloWorld\test.ps1', function (error, result) {
 //powerShell('function test {"hello"};test', function (error, result) {
@@ -14,7 +14,7 @@ var owin = require('../../lib/owin-powershell.js')
 //var script = "'hello world'";
 var script = process.argv.splice(2)[0] || "'Hello World'";
 
-owin.powerShell(script, function (error, result) {
+edge.powerShell(script, function (error, result) {
     if (error) throw error;
     console.log(result);
 });
