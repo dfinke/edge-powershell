@@ -1,9 +1,16 @@
 function Invoke-PSNode {
-    param($script)
+    param(
+        $script,
+        [Switch]$NoConversion
+    )
 
     if(!$env:EDGE_POWERSHELL_NATIVE) {
         $env:EDGE_POWERSHELL_NATIVE = '..\..\src\Edge.PowerShell\Edge.PowerShell\bin\Debug\Edge.PowerShell.dll'
     }
 
-    ((node .\test.js $script) -join '' | ConvertFrom-Json ).result
+    if($NoConversion) {
+        node .\test.js $script
+    } else {
+        ((node .\test.js $script) -join '' | ConvertFrom-Json ).result
+    }
 }

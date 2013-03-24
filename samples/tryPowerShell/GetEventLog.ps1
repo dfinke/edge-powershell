@@ -1,0 +1,1 @@
+Get-EventLog -LogName Application | select -first 3

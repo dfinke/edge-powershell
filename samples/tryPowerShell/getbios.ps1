@@ -1,2 +1,1 @@
-
-gwmi win32_bios
+Get-WmiObject win32_bios #| Select SMBIOSBIOSVersion, Manufacturer,Name,SerialNumber,Version

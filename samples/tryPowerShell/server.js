@@ -4,13 +4,14 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 8080;
 
-function wrapScript(script) {
-	return '.\\' + script + '.ps1';
-}
+//function wrapScript(script) {
+//	return '.\\' + script + '.ps1';
+//}
 app.get('/powershell/:script', function(req,res) {
 
 	var payload = {
-		script: wrapScript(req.params.script),
+		//script: wrapScript(req.params.script),
+		script: req.params.script,
 		parameters: req.query
 		//request: req,
 		//response: res,
