@@ -15,10 +15,10 @@ namespace Edge.PS
             var powerShell = PowerShell.Create();
             var payload = input as IDictionary<string, object>;
 
-            var script = payload == null ? input.ToString() : GetScriptFromPayload(payload);
+            var script = payload == null ? GetScriptFromInput(input.ToString()) : GetScriptFromPayload(payload);
 
             powerShell.AddScript(script);
-            powerShell.AddCommand("Out-String");            
+            powerShell.AddCommand("Out-String");
 
             var outputs = await Task.Factory.FromAsync<PSDataCollection<PSObject>, PSInvocationSettings, PSDataCollection<PSObject>>(
                 powerShell.BeginInvoke,
@@ -27,29 +27,44 @@ namespace Edge.PS
                 new PSInvocationSettings(),
                 null,
                 TaskCreationOptions.None);
-            
-            var results = outputs.Select(psobject => psobject.ToString()).ToList();            
+
+            var results = outputs.Select(psobject => psobject.ToString()).ToList();
             return Task.FromResult<object>(results);
+        }
+
+        private string GetScriptFromInput(string input)
+        {
+            return GetScriptFile(input);
+        }
+
+        private string GetScriptFile(string script)
+        {
+            var tmpScript = string.Format(@".\{0}.ps1", script);
+            return File.Exists(tmpScript) ? tmpScript : script;
         }
 
         private string GetScriptFromPayload(IDictionary<string, object> payload)
         {
-            string script = payload["script"] as string;
-            var tmpScript = string.Format(@".\{0}.ps1", script);
-            script = File.Exists(tmpScript) ? tmpScript : script;
+            var script = GetScriptFile(payload["script"] as string);
 
-            var parameters = (Dictionary<string, object>)payload["parameters"];
+            var targetScript = script;
 
-            var sb = new StringBuilder(script);
-
-            foreach (var item in parameters)
+            if (payload.ContainsKey("parameters"))
             {
-                sb.AppendFormat(" -{0} {1} ", item.Key, item.Value);
+                var parameters = payload["parameters"] as Dictionary<string, object>;
+
+                var sb = new StringBuilder(script);
+
+                foreach (var item in parameters)
+                {
+                    sb.AppendFormat(" -{0} {1} ", item.Key, item.Value);
+                }
+
+                targetScript = sb.ToString();
+
             }
 
-            var targetScript = sb.ToString();
-
-            Console.WriteLine("script: {0}", targetScript);
+            //Console.WriteLine("script: {0}", targetScript);
 
             return targetScript;
         }
