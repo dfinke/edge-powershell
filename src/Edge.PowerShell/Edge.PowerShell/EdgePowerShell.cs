@@ -28,7 +28,7 @@ namespace Edge.PS
                 null,
                 TaskCreationOptions.None);
 
-            var results = outputs.Select(psobject => psobject.ToString()).ToList();
+            var results = outputs.Select(psobject => psobject).ToList();
             return Task.FromResult<object>(results);
         }
 
